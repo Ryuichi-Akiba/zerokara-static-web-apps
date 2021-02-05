@@ -12,14 +12,14 @@
       <h1>Hello Azure Static Web Apps!!</h1>
       <p>Loading content from the API: <b id="message">...</b></p>
     </main>
-
-    <script>
-      (async function () {
-        let response = await fetch(`api/message`);
-        let message = await response.json();
-
-        document.querySelector("#message").innerHTML = message.text
-    })();
-    </script>
   </body>
+
+  <script>
+    (async function () {
+      let response = await fetch(`api/message`);
+      let message = await response.json();
+
+      document.querySelector("#message").innerHTML = message.text
+    })();
+  </script>
 </html>
