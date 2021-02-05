@@ -10,6 +10,14 @@
   <body>
     <main>
       <h1>Hello Azure Static Web Apps!!</h1>
+      <p>Loading content from the API: <b id="message">...</b></p>
     </main>
+
+    <script>
+      (async function() {
+        let { text } = await ( await fetch(`/api/message`)).json();
+        document.getElementById('message').textContent = text;
+      }())
+    </script>
   </body>
 </html>
